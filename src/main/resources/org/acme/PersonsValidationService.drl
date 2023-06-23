@@ -1,0 +1,13 @@
+package org.acme
+unit PersonsValidationService
+
+import org.acme.Person;
+
+rule "Is adult"
+when
+    $person: /persons[age > 18]
+then
+    modify($person) { 
+    	setAdult(true) 
+    };
+end
